@@ -1,14 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Farm Mini App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm Management Mini App</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>🌱 Farm Management</h1>
-    <p>Hello! Your mini app is working.</p>
+    <header class="app-header">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/50/Republic_Polytechnic_logo.svg/1200px-Republic_Polytechnic_logo.svg.png" alt="Republic Polytechnic" class="logo">
+    </header>
 
-    <button onclick="alert('Irrigation triggered!')">
-        Start Irrigation
-    </button>
+    <main id="app-container">
+        <div id="dashboard" class="grid-container">
+            <div class="grid-item" onclick="openModule('Plant Inventory', '🌿')">
+                <div class="icon">🌿</div>
+                <p>Plant Inventory</p>
+            </div>
+            <div class="grid-item" onclick="openModule('Farm Supplies', '🚜')">
+                <div class="icon">🚜</div>
+                <p>Farm Supplies</p>
+            </div>
+            <div class="grid-item" onclick="openModule('Non-Farm Supplies', '📦')">
+                <div class="icon">📦</div>
+                <p>Non-Farm Supplies</p>
+            </div>
+            <div class="grid-item" onclick="openModule('Job Allocation', '📋')">
+                <div class="icon">📋</div>
+                <p>Job Allocation</p>
+            </div>
+            <div class="grid-item" onclick="openModule('Job Summary', '📊')">
+                <div class="icon">📊</div>
+                <p>Job Summary</p>
+            </div>
+            <div class="grid-item" onclick="openModule('Invoices', '💰')">
+                <div class="icon">💰</div>
+                <p>Quotation/Invoice</p>
+            </div>
+            <div class="grid-item" onclick="openModule('Vehicles', '🚚')">
+                <div class="icon">🚚</div>
+                <p>Vehicle Management</p>
+            </div>
+            <div class="grid-item" onclick="openModule('GAP Docs', '📁')">
+                <div class="icon">📁</div>
+                <p>GAP Documentation</p>
+            </div>
+            <div class="grid-item" onclick="openModule('Urgent', '⚠️')">
+                <div class="icon">⚠️</div>
+                <p>Urgent Matters</p>
+            </div>
+        </div>
+
+        <div id="module-view" class="hidden">
+            <button onclick="showDashboard()" class="back-btn">← Back</button>
+            <h2 id="module-title"></h2>
+            <div id="module-content">
+                <p>Mock data for this module goes here...</p>
+                <table border="1" style="width:100%; border-collapse: collapse; margin-top: 10px;">
+                    <tr><th>ID</th><th>Detail</th><th>Status</th></tr>
+                    <tr><td>001</td><td>Sample Entry</td><td>Pending</td></tr>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
